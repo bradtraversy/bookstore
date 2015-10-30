@@ -1,0 +1,54 @@
+<a href="#/books">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit Book</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+      <form ng-submit="updateBook()" ng-init="getBook()">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" ng-model="book.title" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label>Genre</label>
+          <select ng-model="book.genre" class="form-control">
+            <option value="Suspense">Suspense</option>
+            <option value="Drama">Drama</option>
+            <option value="Romance">Romance</option>
+            <option value="NonFiction">NonFiction</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Author</label>
+          <input type="text" class="form-control" ng-model="book.author" placeholder="Author">
+        </div>
+        <div class="form-group">
+          <label>Publisher</label>
+          <input type="text" class="form-control" ng-model="book.publisher" placeholder="Publisher">
+        </div>
+        <div class="form-group">
+          <label>Pages</label>
+          <input type="text" class="form-control" ng-model="book.pages" placeholder="Pages">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea class="form-control" ng-model="book.description" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="text" class="form-control" ng-model="book.image_url" placeholder="Image URL">
+        </div>
+        <div class="form-group">
+          <label>Buy URL</label>
+          <input type="text" class="form-control" ng-model="book.buy_url" placeholder="Buy URL">
+        </div>
+       
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>

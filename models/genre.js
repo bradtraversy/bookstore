@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // Genre Schema
-var genreSchema = mongoose.Schema({
+const genreSchema = mongoose.Schema({
 	name:{
 		type: String,
 		required: true
@@ -12,20 +12,20 @@ var genreSchema = mongoose.Schema({
 	}
 });
 
-var Genre = module.exports = mongoose.model('Genre', genreSchema);
+const Genre = module.exports = mongoose.model('Genre', genreSchema);
 
 // Get Genres
-module.exports.getGenres = function(callback, limit){
+module.exports.getGenres = (callback, limit) => {
 	Genre.find(callback).limit(limit);
 }
 
 // Add Genre
-module.exports.addGenre = function(genre, callback){
+module.exports.addGenre = (genre, callback) => {
 	Genre.create(genre, callback);
 }
 
 // Update Genre
-module.exports.updateGenre = function(id, genre, options, callback){
+module.exports.updateGenre = (id, genre, options, callback) => {
 	var query = {_id: id};
 	var update = {
 		name: genre.name
@@ -35,7 +35,7 @@ module.exports.updateGenre = function(id, genre, options, callback){
 
 
 // Delete Genre
-module.exports.removeGenre = function(id, callback){
+module.exports.removeGenre = (id, callback) => {
 	var query = {_id: id};
 	Genre.remove(query, callback);
 }
